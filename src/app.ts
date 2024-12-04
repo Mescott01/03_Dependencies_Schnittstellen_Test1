@@ -9,7 +9,7 @@ app.use(express.json());
 
 // GET-Endpunkt für /hello-world
 app.get('/hello-world', (_req, res) => {
-  res.send('Hello, World!!!!!');
+  res.send('Hello, World!!!!');
 });
 
 // GET-Endpunkt für /twitter
