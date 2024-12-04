@@ -9,13 +9,16 @@ app.use(express.json());
 
 // GET-Endpunkt für /hello-world
 app.get('/hello-world', (_req, res) => {
-  res.send('Hello, World!');
+  res.send('Hello, World!!!!!');
 });
 
-// GET-Endpunkt für / "/"
-app.get('/hi', (_req, res) => {
-  res.send('Welcome to the API');
+// GET-Endpunkt für /twitter
+app.get('/twitter', (_req, res) => {
+  res.send('this is a tweet!');
 });
+
+// Initialisiere API-Endpunkte
+initializeAPI(app); // 
 
 // Server starten
 app.listen(port, () => {
