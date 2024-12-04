@@ -1,5 +1,5 @@
 import express from 'express';
-import { initializeAPI } from './api';
+import { initializeAPI } from '../api';
 
 const app = express();
 const port = 3000;
@@ -12,8 +12,10 @@ app.get('/hello-world', (_req, res) => {
   res.send('Hello, World!');
 });
 
-// API-Endpunkte initialisieren
-initializeAPI(app);
+// GET-Endpunkt für / "/"
+app.get('/hi', (_req, res) => {
+  res.send('Welcome to the API');
+});
 
 // Server starten
 app.listen(port, () => {
