@@ -1,0 +1,33 @@
+services:
+  database:
+    image: postgres
+    container_name: container_melo
+    environment:
+      POSTGRES_PASSWORD: supersecret123
+      POSTGRES_DB: minitwitter
+    ports:
+      - "5432:5434"
+
+  minitwitter-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: minitwitter-1
+    environment:
+      DATABASE_URL: postgres://postgres:supersecret123@database:5432/minitwitter
+    ports:
+      - 
+    depends_on:
+      - database
+
+  minitwitter-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: minitwitter-2
+    environment:
+      DATABASE_URL: postgres://postgres:supersecret123@database:5432/minitwitter
+    ports:
+      -
+    depends_on:
+      - database
